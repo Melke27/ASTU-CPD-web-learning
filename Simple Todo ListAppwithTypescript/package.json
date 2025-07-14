@@ -1,0 +1,13 @@
+{
+  "name": "simple-todo-list",
+  "version": "1.0.0",
+  "description": "A simple Todo List application built with TypeScript",
+  "main": "todo.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node todo.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

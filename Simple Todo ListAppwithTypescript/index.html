@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Todo List</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #f0f2f5;
+        }
+        #todoContainer {
+            background-color: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            min-height: 400px;
+        }
+        h1 {
+            color: #1a73e8;
+            margin-bottom: 30px;
+            text-align: center;
+            font-size: 2em;
+        }
+        #todoList {
+            margin-top: 20px;
+        }
+        .todo-input {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+        }
+        #newTodoInput {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        #newTodoInput:focus {
+            outline: none;
+            border-color: #1a73e8;
+            box-shadow: 0 0 0 2px rgba(26, 115, 232, 0.2);
+        }
+        button {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            background-color: #1a73e8;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #1557b0;
+        }
+        .todo-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border-bottom: 1px solid #f0f0f0;
+            background-color: #ffffff;
+        }
+        .todo-item:last-child {
+            border-bottom: none;
+        }
+        .todo-item span {
+            flex: 1;
+            font-size: 16px;
+            margin-right: 20px;
+        }
+        .todo-item button {
+            margin-left: 10px;
+            padding: 8px 16px;
+            font-size: 14px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .todo-item button:first-child {
+            background-color: #4CAF50;
+            color: white;
+        }
+        .todo-item button:first-child:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+        .todo-item button:nth-child(3) {
+            background-color: #2196F3;
+            color: white;
+        }
+        .todo-item button:nth-child(3):hover {
+            background-color: #1976D2;
+            transform: scale(1.05);
+        }
+        .todo-item button:last-child {
+            background-color: #f44336;
+            color: white;
+        }
+        .todo-item button:last-child:hover {
+            background-color: #da190b;
+            transform: scale(1.05);
+        }
+        .todo-edit-input {
+            padding: 8px;
+            border: 2px solid #e0e0e0;
+            border-radius: 4px;
+            font-size: 16px;
+            margin-right: 20px;
+            width: 200px;
+        }
+        .todo-edit-input:focus {
+            outline: none;
+            border-color: #2196F3;
+            box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.2);
+        }
+        .completed {
+            text-decoration: line-through;
+            color: #888;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div id="todoContainer">
+        <h1>Simple Todo List</h1>
+        <div>
+            <input type="text" id="newTodoInput" placeholder="Enter a new todo...">
+            <button onclick="addNewTodo()">Add Todo</button>
+        </div>
+        <div id="todoList">
+            <div class="todo-item">
+                <span>${todo.title}</span>
+                <button onclick="todoList.toggleTodo(${todo.id})">${todo.completed ? 'Undo' : 'Complete'}</button>
+                <button onclick="todoList.editTodo(${todo.id})">Edit</button>
+                <button onclick="todoList.removeTodo(${todo.id})">Remove</button>
+            </div>
+        </div>
+    </div>
+    <script src="todo.js"></script>
+</body>
+</html>
