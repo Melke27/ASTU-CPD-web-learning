@@ -1,0 +1,108 @@
+{
+  "info": {
+    "name": "JSONPlaceholder API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Posts",
+      "item": [
+        {
+          "name": "GET All Posts",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/posts",
+              "protocol": "https",
+              "host": ["jsonplaceholder", "typicode", "com"],
+              "path": ["posts"]
+            }
+          }
+        },
+        {
+          "name": "GET Single Post",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/posts/1",
+              "protocol": "https",
+              "host": ["jsonplaceholder", "typicode", "com"],
+              "path": ["posts", "1"]
+            }
+          }
+        },
+        {
+          "name": "POST Create Post",
+          "request": {
+            "method": "POST",
+            "header": {
+              "Content-Type": "application/json"
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"Test Post\",\n    \"body\": \"This is a test post body.\",\n    \"userId\": 1\n}"
+            },
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/posts",
+              "protocol": "https",
+              "host": ["jsonplaceholder", "typicode", "com"],
+              "path": ["posts"]
+            }
+          }
+        },
+        {
+          "name": "PUT Update Post",
+          "request": {
+            "method": "PUT",
+            "header": {
+              "Content-Type": "application/json"
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"Updated Post Title\",\n    \"body\": \"This post has been updated.\"\n}"
+            },
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/posts/1",
+              "protocol": "https",
+              "host": ["jsonplaceholder", "typicode", "com"],
+              "path": ["posts", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Comments",
+      "item": [
+        {
+          "name": "GET All Comments",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/comments",
+              "protocol": "https",
+              "host": ["jsonplaceholder", "typicode", "com"],
+              "path": ["comments"]
+            }
+          }
+        },
+        {
+          "name": "GET Comments for Post",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://jsonplaceholder.typicode.com/posts/1/comments",
+              "protocol": "https",
+              "host": ["jsonplaceholder", "typicode", "com"],
+              "path": ["posts", "1", "comments"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
